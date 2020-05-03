@@ -1,0 +1,39 @@
+{
+  "name": "express-sequelize-postgresql",
+  "version": "1.0.0",
+  "description": "Node.js - REST API's w/ExpressJS, Sequelize, & PostgreSQL DB.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicholasKyleHoffman/node-express-sequelize-postgresql.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "sequelize",
+    "postgresql",
+    "rest",
+    "api",
+    "relational",
+    "database",
+    "fullstack",
+    "app"
+  ],
+  "author": "Nicholas Kyle Hoffman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NicholasKyleHoffman/node-express-sequelize-postgresql/issues"
+  },
+  "homepage": "https://github.com/NicholasKyleHoffman/node-express-sequelize-postgresql#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "pg": "^8.0.3",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.7"
+  }
+}
