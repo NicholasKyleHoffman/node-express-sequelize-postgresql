@@ -8,6 +8,8 @@ var corsOptions = {
   origin: "http://localhost:8081"
 };
 
+// Problematic if not running on localhost (see readme or https://bezkoder.com/node-express-sequelize-postgresql/)
+// If Problematic => Comment below line
 app.use(cors(corsOptions));
 
 // parse requests of content-type - application/jspn
