@@ -8,9 +8,9 @@ After cloning repo, run the following command (in project folder):
 * open browser tab to localhost:8080
 
 
-Troubleshooting:
+<b>Troubleshooting:</b>
 
-* If your project works on localhost:// + ${PORT}  (specifications in <b>server.js</b> file), see below comment & response from bezkoder at <a href="https://bezkoder.com/node-express-sequelize-postgresql/">the bottom of this page</a>:
+* <i>If your project works on localhost:// + ${PORT}  (specifications in <b>server.js</b> file), see below comment & response from bezkoder at <a href="https://bezkoder.com/node-express-sequelize-postgresql/">the bottom of this page</a>:</i>
 
 "pullakissa
 April 8, 2020 at 8:40 am
@@ -22,10 +22,11 @@ Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remot
 
 I have looked through hours of different tutorials, but I still seem to get the same error. Could you please help me? 🙂"
 
-* SOLUTION:
+<br>
+<b>SOLUTION:</b>
 
-bezkoder
+"bezkoder
 April 8, 2020 at 10:23 am
-Hi, just comment (disable) this line:
+Hi, just comment (disable) this line:"
 
 app.use(cors(corsOptions));
