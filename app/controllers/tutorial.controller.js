@@ -99,7 +99,7 @@ exports.update = (req, res) => {
     });
 };
 
-// Delete a Tutorial with the specified id in the request
+// Delete a Tutorial Object with the specified id: in the request
 exports.delete = (req, res) => {
   const id = req.params.id;
 
@@ -126,15 +126,34 @@ exports.delete = (req, res) => {
 
 // Delete all Tutorials from the database.
 exports.deleteAll = (req, res) => {
-
+  Tutorial.destroy({
+    where: { },
+    truncate: false
+  })
+    .then(nums => {
+      res.send({ message: `${nums} Tutorials were deleted successfully!!`});
+    })
+    .catch(err => {
+      res.status(500).send{
+        message:
+          err.message || "Some unknown error occurred when DELETING ALL Tutorials..."
+      });
+    })''
 };
 
-// Find all published Tutorials
+// Find all published Tutorials WHERE * (published == true)
 exports.findAllPublished = (req, res) => {
-
+Tutorial.findAll({ where: { published: true } })
+  .then(data => {
+    res.send(data);
+  })
+  .catch(err => {
+    res.status(500).send({
+        message:
+          err.message || "Some unknown error occurred when RETRIEVING ALL Tutorials..."
+    });
+  });
 };
-
-
 
 
 // Create the Controller
