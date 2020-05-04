@@ -13,7 +13,7 @@ exports.create = (req, res) => {
     return;
   }
 
-  // Create a Tutorials
+  // Create a Tutorial
   const tutorial = {
     title: req.body.title,
     description: req.body.description,
@@ -35,6 +35,9 @@ exports.create = (req, res) => {
 };
 
 // Retrieve all Tutorial Objects from the database (w/conditions)
+// We use req.query.title to get query string from the Request
+// and consider it as condition for findAll() method.
+
 exports.findAll = (req, res) => {
   const title = req.query.title;
   var condition = title ? { title: { [Op.iLike]: `%${title}%` } } : null;
@@ -53,7 +56,18 @@ Tutorial.findAll({ where: condition })
 
 // Find a single Tutorial with an id
 exports.findOne = (req, res) => {
+  const id = req.params.id;
 
+  Tutorial.findByPk(id)
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          "Error. Couldn't find the Turotial with id=" + id
+      });
+    });
 };
 
 // Update a Tutorial by the id in the request
