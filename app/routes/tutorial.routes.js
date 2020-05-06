@@ -15,7 +15,7 @@ modules.export = app => {
   // Retrieve SINGLE tutorial w/ID
   router.get("/:id", tutorials.findOne);
 
-  // Update a Tutorial w/ID
+  // Update a Tutorial w/ID`
   router.put("/:id",tutorials.update);
 
   // Delete a Tutorial w/ID
@@ -24,7 +24,7 @@ modules.export = app => {
   // Delete all Tutorials/ Create a new Tutorial (?)
   router.put("/:id",tutorials.deleteAll);
 
-  app.use('/api/tutorials', router);
+  app.use("/api/tutorials", router);
 
 };
 
